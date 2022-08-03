@@ -23,8 +23,8 @@ function iterativeFibonacci(n) {
 }
 
 function numberReducer(nums, initial) {
-  let head = nums[0];
-  let tail = [...nums].slice(1);
+  const head = nums[0];
+  const tail = [...nums].slice(1);
   switch (nums.length) {
     case 0:
       return initial;
@@ -40,8 +40,8 @@ function numberReducer(nums, initial) {
   The ouput should have the value of addition of the input regardless how nested they are
 */
 function nestedAddition(nested, initial) {
-  let head = nested[0];
-  let tail = [...nested].slice(1);
+  const head = nested[0];
+  const tail = [...nested].slice(1);
   switch (nested.length) {
     case 0:
       return initial;
@@ -56,4 +56,16 @@ function nestedAddition(nested, initial) {
   }
 }
 
-module.exports = { recursiveFibonacci, iterativeFibonacci, nestedAddition };
+/*
+  Example: What is the factorial of 5!?
+  Answer: 5 * 4!. It means, 5 * 4 * 3 * 2 * 1.
+  So, if n is the input, then n! = n * (n-1)!.
+*/
+function factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+
+module.exports = {
+  recursiveFibonacci, iterativeFibonacci, nestedAddition, factorial,
+};

@@ -5,6 +5,7 @@ const {
   recursiveFibonacci,
   iterativeFibonacci,
   nestedAddition,
+  factorial,
 } = require('./recursion');
 
 test('bubble sort', () => {
@@ -27,4 +28,11 @@ test('nested addition', () => {
   expect(nestedAddition([1, [2], 3], 0)).toEqual(6);
   expect(nestedAddition([[[[[[[[[5]]]]]]]]], 0)).toEqual(5);
   expect(nestedAddition([10, [12, 14, [1], [16, [20]]], 10, 11], 0)).toEqual(94);
+});
+
+test('factorial', () => {
+  expect(factorial(5)).toEqual(120);
+  expect(factorial(3)).toEqual(6);
+  expect(factorial(1)).toEqual(1);
+  expect(factorial(0)).toEqual(1);
 });
