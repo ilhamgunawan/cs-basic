@@ -8,6 +8,7 @@ const {
   factorial,
 } = require('./recursion');
 const { mergeSort } = require('./merge-sort');
+const { quickSort } = require('./quick-sort');
 
 test('bubble sort', () => {
   const result = bubbleSort([...unsortedNumbers]);
@@ -41,4 +42,12 @@ test('factorial', () => {
 test('merge sort', () => {
   const result = mergeSort([...unsortedNumbers]);
   expect(result).toEqual(sortedNumbers);
+});
+
+test('quick sort', () => {
+  expect(quickSort([4, 2, 6, 1], false)).toEqual([1, 2, 4, 6]);
+  expect(quickSort([5, 3, 3, 8], false)).toEqual([3, 3, 5, 8]);
+  expect(quickSort([5, 3, 3, 8], true)).toEqual([3, 5, 8]);
+  expect(quickSort([9999], false)).toEqual([9999]);
+  expect(quickSort([], false)).toEqual([]);
 });
