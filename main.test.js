@@ -7,6 +7,7 @@ const {
   nestedAddition,
   factorial,
 } = require('./recursion');
+const { mergeSort } = require('./merge-sort');
 
 test('bubble sort', () => {
   const result = bubbleSort([...unsortedNumbers]);
@@ -35,4 +36,9 @@ test('factorial', () => {
   expect(factorial(3)).toEqual(6);
   expect(factorial(1)).toEqual(1);
   expect(factorial(0)).toEqual(1);
+});
+
+test('merge sort', () => {
+  const result = mergeSort([...unsortedNumbers]);
+  expect(result).toEqual(sortedNumbers);
 });
